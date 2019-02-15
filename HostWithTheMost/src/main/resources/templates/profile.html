@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{bootstrap.css}">
+    <title>Profile</title>
+          <link rel="stylesheet" th:href="@{carousel.css}">
+
+    <style>
+      .left-grid{grid-area: left-grid ;
+      }
+      
+      .middle-grid{grid-area: middle-grid ;
+                text-align: center;
+
+      }
+      .righ-grid{grid-area: right-grid ;
+      }
+      .grid-container {display: grid; 
+      grid-template-areas: 'left-grid middle-grid right-grid';
+      }
+
+      .middle-container { text-align: center; display: grid; 
+      grid-template-areas: 'grid-row1' 'grid-row2';
+   }
+
+      .grid-row1{ grid-area: grid-row1; }
+      .grid-row2{ grid-area: grid-row2; }
+
+      .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+      </style>
+  </head>
+  <body>
+ 
+
+
+        <main class="grid-container">
+          <div class="left-grid"></div>
+          <div class="middle-grid middle-container">
+            <div class="grid-row1">
+                <img class="bd-placeholder-img rounded-circle" th:src="@{/images/profilePicture.jpg}" alt="sandro" width="240" height="240" class="rounded-circle" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
+            </div>
+            <div class="grid-row2">
+                <form th:action="@{/profile}" method="POST" th:object="${user}">
+
+                  <div>
+                      <h3>Personal information</h3>
+                      <div>
+                          <label>First name</label>
+                          <div>
+                              <input type="text" th:field="*{firstName}" placeholder="Examplius">
+                              <p></p>
+                          </div>
+                      </div>
+
+                      <div>
+                          <label>Last name</label>
+                          <div>
+                              <input type="text" th:field="*{lastName}" placeholder="Exampleson">
+                              <p></p>
+                          </div>
+                      </div>
+
+                      <div>
+                          <label>Birth date</label>
+                          <div>
+                              <input type="text" th:field="*{birthDate}">
+                              <p></p>
+                          </div>
+                      </div>
+
+                      <div>
+                          <label>Phone</label>
+                          <div>
+                              <input type="text" th:field="*{phoneNumber}" placeholder="XXX-XXX XX XX">
+                              <p></p>
+                          </div>
+                      </div>
+
+                      <div>
+                          <label>Email</label>
+                          <div>
+                              <input type="email" th:field="*{email}" placeholder="example@examples.ex">
+                              <p></p>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div>
+                      <h3>Address</h3>
+                      <div>
+                          <label>Street</label>
+                          <div>
+                              <input type="text" th:field="*{street}" placeholder="Example View">
+                              <p></p>
+                          </div>
+                      </div>
+                      <div>
+                          <label>Postal code</label>
+                          <div>
+                              <input type="text" th:field="*{postalCode}" placeholder="XXXXX">
+                              <p></p>
+                          </div>
+                      </div>
+
+                      <div>
+                          <label>City</label>
+                          <div>
+                              <input type="text" th:field="*{city}" placeholder="Example Town">
+                              <p></p>
+                          </div>
+                      </div>
+
+                  </div>
+
+                  <div>
+                      <h3>Profile</h3>
+                      <div>
+                          <label>Username</label>
+                          <div>
+                              <input type="text" th:field="*{userName}" placeholder="exampleman99">
+                              <p></p>
+                          </div>
+                      </div>
+
+                      <div>
+                          <label>Password</label>
+                          <div>
+                              <input type="password" th:field="*{passWord}" placeholder="supersecretpassword">
+                              <p></p>
+                          </div>
+                      </div>
+
+                      <input type="submit" value="Update profile">
+
+                  </div>
+              </form>
+            </div>
+            <footer class="container">
+                    <hr class="featurette-divider">
+              <p class="float-right"><a href="#">Back to top</a></p>
+              <p>&copy; 2019-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+            </footer>
+            </div>
+            
+          <div class="right-grid"></div>
+        </main>
+         
+    </body>
+</html>

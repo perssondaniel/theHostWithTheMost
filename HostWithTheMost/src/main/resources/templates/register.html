@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/bootstrap.css}">
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/images/logoPink.png}">
+    <title>Register</title>
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <link th:href="@{carousel.css}" rel="stylesheet" >
+</head>
+
+<body>
+    <header>
+        <nav id="headerColor" class="navbar navbar-expand-md navbar-dark fixed-top">
+            <a class="navbar-brand" th:href="@{#}"><img style="width:40px; height: 40px;" th:src="@{/images/smallLogo.png}" alt="logo">HOST WITH THE MOST</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{#}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{#}">Profile</a>
+                    </li>
+                    <!--<li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                      </li>-->
+                </ul>
+                <ul class="form-inline mt-2 mt-md-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{#}">Logout<span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container registerWrapper">
+        <div class="sideLeft"></div>
+        <div class="content">
+            <h1>Register profile</h1>
+            <div class="profileImage">
+                <img th:src="@{/images/profilePicture.jpg}" width="200px" height="200px">
+                <br>
+                <a class="editPicture" href="#" rel="edit profile picture">Edit Profile picture</a>
+            </div>
+            <div>
+                    <form class="forms" th:action="@{/register}" method="POST" th:object="${user}">
+                    
+                        <div>
+                            <h3>Who are you?</h3>
+                            <div>
+                                <label>First name</label>
+                                <div>
+                                    <input type="text" th:field="*{firstName}" placeholder="Examplius">
+                                    <p></p>
+                                </div>
+                            </div>
+    
+                            <div>
+                                <label>Last name</label>
+                                <div>
+                                    <input type="text" th:field="*{lastName}" placeholder="Exampleson">
+                                    <p></p>
+                                </div>
+                            </div>
+    
+                            <div>
+                                <label>Birth date</label>
+                                <div>
+                                    <input type="text" th:field="*{birthDate}">
+                                    <p></p>
+                                </div>
+                            </div>
+    
+                            <div>
+                                <label>Phone</label>
+                                <div>
+                                    <input type="text" th:field="*{phoneNumber}" placeholder="XXX-XXX XX XX">
+                                    <p></p>
+                                </div>
+                            </div>
+    
+                            <div>
+                                <label>Email</label>
+                                <div>
+                                    <input type="email" th:field="*{email}" placeholder="example@examples.ex">
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div>
+                            <h3>Where do you live?</h3>
+                            <div>
+                                <label>Street</label>
+                                <div>
+                                    <input type="text" th:field="*{street}" placeholder="Example View">
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div>
+                                <label>Postal code</label>
+                                <div>
+                                    <input type="text" th:field="*{postalCode}" placeholder="XXXXX">
+                                    <p></p>
+                                </div>
+                            </div>
+    
+                            <div>
+                                <label>City</label>
+                                <div>
+                                    <input type="text" th:field="*{city}" placeholder="Example Town">
+                                    <p></p>
+                                </div>
+                            </div>
+    
+                        </div>
+    
+                        <div>
+                                <h3>Almost there baby!</h3>
+                            <div>
+                                <label>Username</label>
+                                <div>
+                                    <input type="text" th:field="*{userName}" placeholder="exampleman99">
+                                    <p></p>
+                                </div>
+                            </div>
+    
+                            <div>
+                                <label>Password</label>
+                                <div>
+                                    <input type="password" th:field="*{passWord}" placeholder="supersecretpassword">
+                                    <p></p>
+                                </div>
+                            </div>
+    
+                        <input type="submit" value="Register profile">
+    
+                        </div>
+                    </form>
+                
+            </div>
+        </div>
+        <div class="sideRight"></div>
+        
+    </div>
+    
+    <footer class="footer">
+        <hr class="featurette-divider">
+        <a th:href="@{#}">About</a>
+        <p>&copy; 2017-2018 Company, Inc. &middot; <a th:href="@{#}">Privacy</a> &middot; <a th:href="@{#}">Terms</a></p>
+    </footer>
+
+
+</body>
+
+</html>
